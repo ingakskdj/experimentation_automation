@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.8.9 on darwin)" generated="20220422 10:50:09.596" rpa="false" schemaversion="3">
+<suite id="s1" name="Complextestcase" source="/Users/aliakskinai/Documents/Robot Framework/pythonProject/WebProductConstructor/tests/complextestcase.robot">
+<test id="s1-t1" name="New Stack - User signs in, clicks, inline links, newsletter, masthead nav and right rail - most popular news and recommended video" line="39">
+<kw name="Begin Web Test" library="common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220422 10:50:09.740" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220422 10:50:09.740" endtime="20220422 10:50:18.443"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220422 10:50:18.443" endtime="20220422 10:50:18.563"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20220422 10:50:18.563" endtime="20220422 10:50:18.564"/>
+</kw>
+<status status="PASS" starttime="20220422 10:50:09.739" endtime="20220422 10:50:18.564"/>
+</kw>
+<kw name="Authorize for New Stack" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ARTICLE_PAGE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220422 10:50:18.565" level="INFO">Opening url 'https://www.wsj.com/articles/putin-sees-a-west-united-on-ukrainebut-what-about-china-and-india-11646234045'</msg>
+<status status="PASS" starttime="20220422 10:50:18.565" endtime="20220422 10:50:32.271"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:div[class^="UserLogin__LoginOptionWrapper"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220422 10:50:32.271" endtime="20220422 10:50:34.699"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:div[class^="UserLogin__LoginOptionWrapper"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220422 10:50:34.699" level="INFO">Clicking element 'css:div[class^="UserLogin__LoginOptionWrapper"]'.</msg>
+<status status="PASS" starttime="20220422 10:50:34.699" endtime="20220422 10:50:37.963"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:input#username</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220422 10:50:37.964" endtime="20220422 10:50:38.663"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css=input#username</arg>
+<arg>${USER_CREDENTIALS}[0]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220422 10:50:38.664" level="INFO">Typing text 'inga.olegovna@gmail.com' into text field 'css=input#username'.</msg>
+<status status="PASS" starttime="20220422 10:50:38.664" endtime="20220422 10:50:38.989"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:button[type=button]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220422 10:50:38.990" endtime="20220422 10:50:39.026"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Continue With Password</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220422 10:50:39.026" level="INFO">Clicking button 'Continue With Password'.</msg>
+<status status="PASS" starttime="20220422 10:50:39.026" endtime="20220422 10:50:39.336"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id:password-login-password</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220422 10:50:39.336" endtime="20220422 10:50:40.315"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password-login-password</arg>
+<arg>${USER_CREDENTIALS}[1]</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220422 10:50:40.315" level="INFO">Typing text 'Dowjones917@' into text field 'id:password-login-password'.</msg>
+<status status="PASS" starttime="20220422 10:50:40.315" endtime="20220422 10:50:40.406"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath: /html/body/div[1]/div[2]/div/div/div/div[20]/div/form/div/div[5]/div[1]/button</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220422 10:50:40.406" endtime="20220422 10:50:40.437"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath: /html/body/div[1]/div[2]/div/div/div/div[20]/div/form/div/div[5]/div[1]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220422 10:50:40.437" level="INFO">Clicking element 'xpath: /html/body/div[1]/div[2]/div/div/div/div[20]/div/form/div/div[5]/div[1]/button'.</msg>
+<status status="PASS" starttime="20220422 10:50:40.437" endtime="20220422 10:50:40.559"/>
+</kw>
+<status status="PASS" starttime="20220422 10:50:18.565" endtime="20220422 10:50:40.559"/>
+</kw>
+<kw name="Locate and Click Save Button" library="ArticleTools">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>css:button[class^="SaveButton__StyledSaveButton-sc-g0dr8p-0"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220422 10:50:40.560" endtime="20220422 10:50:57.902"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:button[class^="SaveButton__StyledSaveButton-sc-g0dr8p-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220422 10:50:57.902" level="INFO">Clicking element 'css:button[class^="SaveButton__StyledSaveButton-sc-g0dr8p-0"]'.</msg>
+<status status="PASS" starttime="20220422 10:50:57.902" endtime="20220422 10:50:59.227"/>
+</kw>
+<status status="PASS" starttime="20220422 10:50:40.560" endtime="20220422 10:50:59.227"/>
+</kw>
+<kw name="Locate and Click Play" library="ArticleTools">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>css:div[class="controls-container"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220422 10:50:59.227" endtime="20220422 10:50:59.273"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:div[class="controls-container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220422 10:50:59.273" level="INFO">Clicking element 'css:div[class="controls-container"]'.</msg>
+<status status="PASS" starttime="20220422 10:50:59.273" endtime="20220422 10:50:59.825"/>
+</kw>
+<status status="PASS" starttime="20220422 10:50:59.227" endtime="20220422 10:50:59.826"/>
+</kw>
+<kw name="Locate and Click Print Button" library="PrintTool">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>css:button[class^="PrintButton__StyledPrintButton-sc-1h9tj0p-0"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220422 10:50:59.827" endtime="20220422 10:51:00.728"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:button[class^="PrintButton__StyledPrintButton-sc-1h9tj0p-0"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220422 10:51:00.728" level="INFO">Clicking element 'css:button[class^="PrintButton__StyledPrintButton-sc-1h9tj0p-0"]'.</msg>
+<status status="PASS" starttime="20220422 10:51:00.728" endtime="20220422 13:03:07.890"/>
+</kw>
+<status status="PASS" starttime="20220422 10:50:59.826" endtime="20220422 13:03:07.890"/>
+</kw>
+<kw name="End Web Test" library="common" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220422 13:03:07.892" endtime="20220422 13:03:08.269"/>
+</kw>
+<status status="PASS" starttime="20220422 13:03:07.892" endtime="20220422 13:03:08.270"/>
+</kw>
+<doc>This is a script triggering key metrics for subscribers</doc>
+<tag>Subscriber, Article Redesign</tag>
+<status status="PASS" starttime="20220422 10:50:09.739" endtime="20220422 13:03:08.270"/>
+</test>
+<doc>This is a test script to trigger key metrics on article page</doc>
+<status status="PASS" starttime="20220422 10:50:09.598" endtime="20220422 13:03:08.270"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Subscriber, Article Redesign</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Complextestcase">Complextestcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
