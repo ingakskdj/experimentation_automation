@@ -2,9 +2,12 @@
 Library  SeleniumLibrary
 
 *** Keywords ***
-Locate and Click ST New Stack
+Locate and Click ST New Stack Facebook
     Locate ST
     Share with Facebook
+
+Locate and Click ST New Stack Twitter
+    Locate ST
     Share with Twitter
 
 Locate ST
@@ -16,8 +19,8 @@ Locate ST
     sleep    5
 #TODO - not working now
 Share with Facebook
-    wait until page contains element    css:a[href^="https://www.facebook.com/"]
-    click element    css:a[href^="https://www.facebook.com/"]
+    wait until page contains element    css=ul[class^="ShareTools__List-sc-1cjh83y-2"] > li:nth-child(1)
+    click element    css=ul[class^="ShareTools__List-sc-1cjh83y-2"] > li:nth-child(1)
     sleep    5
 
 Share with Twitter

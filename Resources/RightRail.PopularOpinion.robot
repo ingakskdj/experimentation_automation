@@ -47,11 +47,11 @@ Click MPO New Stack
     click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(1)
     Execute Javascript  history.back()
 
-    sleep    5
-    #link2
-    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(3)
-    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(3)
-    Execute Javascript  history.back()
+#    sleep    5
+#    #link2
+#    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(3)
+#    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(3)
+#    Execute Javascript  history.back()
 
 
 #@RobotKeyword

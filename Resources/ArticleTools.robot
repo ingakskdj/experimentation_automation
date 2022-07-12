@@ -1,6 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
-Resource    /Users/aliakskinai/Documents/Robot Framework/pythonProject/WebProductConstructor/Resources/PrintTool.robot
+Resource    /Users/aliakskinai/Documents/RobotFramework/pythonProject/WebProductConstructor/Resources/PrintTool.robot
 
 *** Keywords ***
 Locate and Click Article Tools

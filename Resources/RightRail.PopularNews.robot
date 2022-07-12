@@ -54,30 +54,30 @@ Click MPN New Stack
     click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(1)
     Execute Javascript  history.back()
 
-    wait until page contains element    css:div[aria-label='Most Popular News']
-    #link1
-    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(2)
-    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(2)
-    Execute Javascript  history.back()
-
-    sleep    5
-    #link2
-    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(3)
-    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(3)
-    Execute Javascript  history.back()
-
-    sleep    5
-    #link2
-    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(4)
-    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(4)
-    Execute Javascript  history.back()
-
-    sleep    5
-    #link2
-    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(5)
-    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(5)
-    Execute Javascript  history.back()
-    sleep    5
+#    wait until page contains element    css:div[aria-label='Most Popular News']
+#    #link1
+#    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(2)
+#    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(2)
+#    Execute Javascript  history.back()
+#
+#    sleep    5
+#    #link2
+#    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(3)
+#    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(3)
+#    Execute Javascript  history.back()
+#
+#    sleep    5
+#    #link2
+#    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(4)
+#    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(4)
+#    Execute Javascript  history.back()
+#
+#    sleep    5
+#    #link2
+#    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(5)
+#    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(5)
+#    Execute Javascript  history.back()
+#    sleep    5
 
 #    sleep    5
 #    #link5
