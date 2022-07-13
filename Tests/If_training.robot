@@ -28,8 +28,8 @@ Test Setup    testSetupBrowserstack
 Test Teardown    End Web Test
 
 *** Variables ***
-${TYPE_OF_ARTICLE} =    new_stack
-&{ARTICLE_PAGE_URL}    old_stack=https://www.wsj.com/articles/the-unbearable-lightness-of-biden-joe-president-speeches-beliefs-left-wing-progressive-trump-11644859341    new_stack=https://www.wsj.com/articles/from-walmart-to-gap-which-retailers-have-the-most-excess-inventory-11654776000
+${TYPE_OF_ARTICLE} =    variation_1
+&{ARTICLE_PAGE_URL}    control=https://www.wsj.com/articles/the-unbearable-lightness-of-biden-joe-president-speeches-beliefs-left-wing-progressive-trump-11644859341    variation_1=https://www.wsj.com/articles/from-walmart-to-gap-which-retailers-have-the-most-excess-inventory-11654776000
 ${BROWSER} =    chrome
 @{USER_CREDENTIALS} =    nameisuseless@ya.ru  tq7D4Kgz!BW69VN
 ${TIMEOUT} =    250
@@ -65,11 +65,8 @@ ${browserstack_accessKey}      Fx6YXr5z7PFyzT9EETcF
 #    wait until page contains element    css=a[aria-label^="Author page for"]
 #    wait until page contains element    dom:${JSPath}
 
-New Stack - User signs in and clicks Share Facebook
-    Locate and Click ST New Stack Facebook
-
-New Stack - User signs in and clicks Share Twitter
-    Locate and Click ST New Stack Twitter
+Test to check better locators - CSS in place of absolute path
+    Authorize for New Stack
 
 #    ${ele}    Get WebElement    document.querySelector("#__next > div > main > article > div > div.Box-sc-m4230u-0.ArticleBodyContent__BylineTimestampWrapper-sc-1tvcld3-0.iooXwK.kPUuCZ > div > span > div > ufc-follow-author-widget").shadowRoot.querySelector("ufc-follow-button").shadowRoot.querySelector("button")
 #    Execute Javascript    arguments[0].shadowRoot.click();     ARGUMENTS    ${ele}

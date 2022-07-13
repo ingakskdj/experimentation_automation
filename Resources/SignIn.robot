@@ -3,7 +3,6 @@ Library  SeleniumLibrary
 
 *** Keywords ***
 Authorize for New Stack
-
     #Click login link
     wait until element is visible    css:div[class^="UserLogin__LoginOptionWrapper"]
     click element   css:div[class^="UserLogin__LoginOptionWrapper"]
@@ -16,12 +15,9 @@ Authorize for New Stack
     #Send password
     wait until element is visible    id:password-login-password
     input text    id:password-login-password    ${USER_CREDENTIALS}[1]
-    wait until element is visible    	css:#password-login > div > form > div > div:nth-child(5) > div.sign-in.hide-if-one-time-linking > button
-    click element    css:#password-login > div > form > div > div:nth-child(5) > div.sign-in.hide-if-one-time-linking > button
-
-    # try to update xpath
-#    wait until element is visible    	xpath: /html/body/div[1]/div[2]/div/div/div/div[20]/div/form/div/div[5]/div[1]/button
-#    click element    xpath: /html/body/div[1]/div[2]/div/div/div/div[20]/div/form/div/div[5]/div[1]/button
+    #improving locator
+    wait until element is visible    	css:button.solid-button.new-design.basic-login-submit
+    click element    css:button.solid-button.new-design.basic-login-submit
 
 Authorize for Old Stack
     go to    ${ARTICLE_PAGE_URL.${TYPE_OF_ARTICLE}}
