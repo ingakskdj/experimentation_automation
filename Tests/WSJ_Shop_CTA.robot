@@ -3,7 +3,7 @@ Library    SeleniumLibrary
 Library    OperatingSystem
 Test Setup    Begin Web Test
 Test Teardown    End Web Test
-Resource    /Users/aliakskinai/Documents/Robot Framework/pythonProject/WebProductConstructor/Resources/common.robot
+Resource    /Users/aliakskinai/Documents/RobotFramework/pythonProject/WebProductConstructor/Resources/common.robot
 
 *** Variables ***
 #check that parameters of the URL are corresponding (such as swg=true)

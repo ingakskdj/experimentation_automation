@@ -1,123 +1,281 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0 (Python 3.9.12 on darwin)" generated="20220713 14:59:15.716" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0 (Python 3.9.12 on darwin)" generated="20220801 14:15:04.628" rpa="false" schemaversion="3">
 <suite id="s1" name="If Training" source="/Users/aliakskinai/Documents/RobotFramework/pythonProject/WebProductConstructor/Tests/if_training.robot">
-<test id="s1-t1" name="Test to check better locators - CSS in place of absolute path" line="68">
-<kw name="testSetupBrowserstack" library="BrowserStackSetup" type="SETUP">
-<kw name="Set Variable" library="BuiltIn">
-<var>${remoteUrl}</var>
-<arg>http://${browserstack_userName}:${browserstack_accessKey}@hub.browserstack.com:80/wd/hub</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220713 14:59:15.836" level="INFO">${remoteUrl} = http://experimentationa9q1xv:Fx6YXr5z7PFyzT9EETcF@hub.browserstack.com:80/wd/hub</msg>
-<status status="PASS" starttime="20220713 14:59:15.836" endtime="20220713 14:59:15.836"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>&amp;{desiredCapabilities}</var>
-<arg>os=${os}</arg>
-<arg>os_version=${osVersion}</arg>
-<arg>browser=${browser}</arg>
-<arg>browser_version=${browserVersion}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20220713 14:59:15.836" level="INFO">&amp;{desiredCapabilities} = { os=windows | os_version=11 | browser=chrome | browser_version=100 }</msg>
-<status status="PASS" starttime="20220713 14:59:15.836" endtime="20220713 14:59:15.836"/>
-</kw>
+<test id="s1-t1" name="Eliminate error with outdated selector - with loops" line="55">
+<kw name="Begin Web Test" library="common" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${baseUrl}</arg>
-<arg>remote_url=${remoteUrl}</arg>
-<arg>desired_capabilities=${desiredCapabilities}</arg>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220713 14:59:15.837" level="INFO">Opening browser 'firefox' to base url 'https://www.wsj.com/articles/biden-says-he-is-considering-canceling-some-student-loan-debt-11651161126?dd_bucket_override=0-29&amp;dd_show=82P&amp;dd_preview=0&amp;next_redirect=true' through remote server at 'http://experimentationa9q1xv:Fx6YXr5z7PFyzT9EETcF@hub.browserstack.com:80/wd/hub'.</msg>
-<status status="PASS" starttime="20220713 14:59:15.837" endtime="20220713 14:59:39.947"/>
+<msg timestamp="20220801 14:15:04.752" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220801 14:15:04.752" endtime="20220801 14:15:07.608"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220713 14:59:39.947" endtime="20220713 14:59:40.423"/>
+<status status="PASS" starttime="20220801 14:15:07.608" endtime="20220801 14:15:08.225"/>
 </kw>
 <kw name="Set Selenium Timeout" library="SeleniumLibrary">
 <arg>${TIMEOUT}</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20220713 14:59:40.423" endtime="20220713 14:59:40.581"/>
+<status status="PASS" starttime="20220801 14:15:08.225" endtime="20220801 14:15:08.227"/>
 </kw>
-<status status="PASS" starttime="20220713 14:59:15.836" endtime="20220713 14:59:40.582"/>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${ARTICLE_PAGE_URL.${TYPE_OF_ARTICLE}}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220801 14:15:08.228" level="INFO">Opening url 'https://www.wsj.com/articles/elon-musk-reverses-decision-to-join-twitters-board-twitter-ceo-says-11649648263?optimizely_log=debug&amp;abtype=edge&amp;testing=test&amp;optimizely_x=21631140329'</msg>
+<status status="PASS" starttime="20220801 14:15:08.227" endtime="20220801 14:15:39.000"/>
 </kw>
-<kw name="Authorize for New Stack" library="SignIn">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css:div[class^="UserLogin__LoginOptionWrapper"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220713 14:59:40.582" endtime="20220713 14:59:52.254"/>
+<status status="PASS" starttime="20220801 14:15:04.751" endtime="20220801 14:15:39.001"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>css:div[class^="UserLogin__LoginOptionWrapper"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220713 14:59:52.255" level="INFO">Clicking element 'css:div[class^="UserLogin__LoginOptionWrapper"]'.</msg>
-<status status="PASS" starttime="20220713 14:59:52.254" endtime="20220713 14:59:57.938"/>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>css:div[aria-label='Most Popular News']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220801 14:15:39.002" endtime="20220801 14:15:39.504"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css:input#username</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220713 14:59:57.938" endtime="20220713 14:59:58.190"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${links}</var>
+<arg>css=ul[class^="css-ctilq6-List"] &gt; li:nth-child(n)</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220801 14:15:40.189" level="INFO">${links} = 10</msg>
+<status status="PASS" starttime="20220801 14:15:39.504" endtime="20220801 14:15:40.189"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>css=input#username</arg>
-<arg>${USER_CREDENTIALS}[0]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220713 14:59:58.191" level="INFO">Typing text 'nameisuseless@ya.ru' into text field 'css=input#username'.</msg>
-<status status="PASS" starttime="20220713 14:59:58.190" endtime="20220713 14:59:59.021"/>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>${links}</value>
+<iter>
+<var name="${index}">0</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//div/main/div[2]/div[3]/ul/li[${index}+1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220801 14:15:40.189" endtime="20220801 14:15:40.281"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css:button[type=button]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220713 14:59:59.021" endtime="20220713 14:59:59.294"/>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${new_link}</var>
+<arg>xpath=//div/main/div[2]/div[3]/ul/li[${index}+1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220801 14:15:40.427" level="INFO">${new_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5cc19cecd8ba58e42af0d2212da7dc6f", element="64f8b372-206b-437f-a289-d8f91a7849cc")&gt;</msg>
+<status status="PASS" starttime="20220801 14:15:40.281" endtime="20220801 14:15:40.427"/>
 </kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>Continue With Password</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220713 14:59:59.295" level="INFO">Clicking button 'Continue With Password'.</msg>
-<status status="PASS" starttime="20220713 14:59:59.294" endtime="20220713 14:59:59.922"/>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${new_link}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220801 14:15:40.427" level="INFO">Clicking link '&lt;selenium.webdriver.remote.webelement.WebElement (session="5cc19cecd8ba58e42af0d2212da7dc6f", element="64f8b372-206b-437f-a289-d8f91a7849cc")&gt;'.</msg>
+<status status="PASS" starttime="20220801 14:15:40.427" endtime="20220801 14:16:00.360"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>id:password-login-password</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220713 14:59:59.922" endtime="20220713 15:00:00.785"/>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>history.back()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220801 14:16:00.361" level="INFO">Executing JavaScript:
+history.back()
+Without any arguments.</msg>
+<status status="PASS" starttime="20220801 14:16:00.360" endtime="20220801 14:16:00.747"/>
 </kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id:password-login-password</arg>
-<arg>${USER_CREDENTIALS}[1]</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220713 15:00:00.786" level="INFO">Typing text 'tq7D4Kgz!BW69VN' into text field 'id:password-login-password'.</msg>
-<status status="PASS" starttime="20220713 15:00:00.786" endtime="20220713 15:00:01.451"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220801 14:16:05.748" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220801 14:16:00.747" endtime="20220801 14:16:05.749"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css:button.solid-button.new-design.basic-login-submit</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220713 15:00:01.451" endtime="20220713 15:00:01.786"/>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${index} == 4</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220801 14:16:05.750" endtime="20220801 14:16:05.750"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>css:button.solid-button.new-design.basic-login-submit</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220713 15:00:01.786" level="INFO">Clicking element 'css:button.solid-button.new-design.basic-login-submit'.</msg>
-<status status="PASS" starttime="20220713 15:00:01.786" endtime="20220713 15:00:02.185"/>
+<status status="PASS" starttime="20220801 14:15:40.189" endtime="20220801 14:16:05.750"/>
+</iter>
+<iter>
+<var name="${index}">1</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//div/main/div[2]/div[3]/ul/li[${index}+1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220801 14:16:05.750" endtime="20220801 14:16:05.831"/>
 </kw>
-<status status="PASS" starttime="20220713 14:59:40.582" endtime="20220713 15:00:02.185"/>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${new_link}</var>
+<arg>xpath=//div/main/div[2]/div[3]/ul/li[${index}+1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220801 14:16:06.105" level="INFO">${new_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5cc19cecd8ba58e42af0d2212da7dc6f", element="7ae5ec20-9b38-498b-b93a-aac2675ca0a2")&gt;</msg>
+<status status="PASS" starttime="20220801 14:16:05.831" endtime="20220801 14:16:06.105"/>
 </kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${new_link}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220801 14:16:06.106" level="INFO">Clicking link '&lt;selenium.webdriver.remote.webelement.WebElement (session="5cc19cecd8ba58e42af0d2212da7dc6f", element="7ae5ec20-9b38-498b-b93a-aac2675ca0a2")&gt;'.</msg>
+<status status="PASS" starttime="20220801 14:16:06.105" endtime="20220801 14:17:29.005"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>history.back()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220801 14:17:29.007" level="INFO">Executing JavaScript:
+history.back()
+Without any arguments.</msg>
+<status status="PASS" starttime="20220801 14:17:29.006" endtime="20220801 14:17:30.400"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220801 14:17:35.401" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220801 14:17:30.400" endtime="20220801 14:17:35.402"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${index} == 4</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220801 14:17:35.402" endtime="20220801 14:17:35.402"/>
+</kw>
+<status status="PASS" starttime="20220801 14:16:05.750" endtime="20220801 14:17:35.402"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//div/main/div[2]/div[3]/ul/li[${index}+1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220801 14:17:35.402" endtime="20220801 14:17:35.412"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${new_link}</var>
+<arg>xpath=//div/main/div[2]/div[3]/ul/li[${index}+1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220801 14:17:35.417" level="INFO">${new_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5cc19cecd8ba58e42af0d2212da7dc6f", element="89ac4d37-17e4-47cc-abc0-f3a8284a85d8")&gt;</msg>
+<status status="PASS" starttime="20220801 14:17:35.412" endtime="20220801 14:17:35.417"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${new_link}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220801 14:17:35.418" level="INFO">Clicking link '&lt;selenium.webdriver.remote.webelement.WebElement (session="5cc19cecd8ba58e42af0d2212da7dc6f", element="89ac4d37-17e4-47cc-abc0-f3a8284a85d8")&gt;'.</msg>
+<status status="PASS" starttime="20220801 14:17:35.417" endtime="20220801 14:17:59.794"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>history.back()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20220801 14:17:59.796" level="INFO">Executing JavaScript:
+history.back()
+Without any arguments.</msg>
+<status status="PASS" starttime="20220801 14:17:59.795" endtime="20220801 14:17:59.859"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220801 14:18:04.860" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220801 14:17:59.859" endtime="20220801 14:18:04.860"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${index} == 4</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220801 14:18:04.860" endtime="20220801 14:18:04.861"/>
+</kw>
+<status status="PASS" starttime="20220801 14:17:35.402" endtime="20220801 14:18:04.861"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath=//div/main/div[2]/div[3]/ul/li[${index}+1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220801 14:18:04.861" endtime="20220801 14:18:04.870"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${new_link}</var>
+<arg>xpath=//div/main/div[2]/div[3]/ul/li[${index}+1]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20220801 14:18:04.878" level="INFO">${new_link} = &lt;selenium.webdriver.remote.webelement.WebElement (session="5cc19cecd8ba58e42af0d2212da7dc6f", element="ee63aeb4-cc89-439c-b9ac-4e5db990ce50")&gt;</msg>
+<status status="PASS" starttime="20220801 14:18:04.870" endtime="20220801 14:18:04.878"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${new_link}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220801 14:18:04.878" level="INFO">Clicking link '&lt;selenium.webdriver.remote.webelement.WebElement (session="5cc19cecd8ba58e42af0d2212da7dc6f", element="ee63aeb4-cc89-439c-b9ac-4e5db990ce50")&gt;'.</msg>
+<msg timestamp="20220801 14:18:19.391" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220801 14:18:19.392" level="FAIL">WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: unexpected command response
+  (Session info: chrome=103.0.5060.134)
+Stacktrace:
+0   chromedriver                        0x0000000102f49d14 chromedriver + 3792148
+1   chromedriver                        0x0000000102ee0828 chromedriver + 3360808
+2   chromedriver                        0x0000000102be10b8 chromedriver + 217272
+3   chromedriver                        0x0000000102bd0124 chromedriver + 147748
+4   chromedriver                        0x0000000102bcf8f4 chromedriver + 145652
+5   chromedriver                        0x0000000102bcef50 chromedriver + 143184
+6   chromedriver                        0x0000000102bce058 chromedriver + 139352
+7   chromedriver                        0x0000000102bce4f8 chromedriver + 140536
+8   chromedriver                        0x0000000102bda5f4 chromedriver + 189940
+9   chromedriver                        0x0000000102be7a20 chromedriver + 244256
+10  chromedriver                        0x0000000102bce79c chromedriver + 141212
+11  chromedriver                        0x0000000102be769c chromedriver + 243356
+12  chromedriver                        0x0000000102c39d74 chromedriver + 580980
+13  chromedriver                        0x0000000102c06318 chromedriver + 369432
+14  chromedriver                        0x0000000102f1f1e8 chromedriver + 3617256
+15  chromedriver                        0x0000000102f23678 chromedriver + 3634808
+16  chromedriver                        0x0000000102f27c6c chromedriver + 3652716
+17  chromedriver                        0x0000000102f24110 chromedriver + 3637520
+18  chromedriver                        0x0000000102f027ac chromedriver + 3499948
+19  chromedriver                        0x0000000102f3bbf0 chromedriver + 3734512
+20  chromedriver                        0x0000000102f3bd54 chromedriver + 3734868
+21  chromedriver                        0x0000000102f50558 chromedriver + 3818840
+22  libsystem_pthread.dylib             0x000000019730426c _pthread_start + 148
+23  libsystem_pthread.dylib             0x00000001972ff08c thread_start + 8
+</msg>
+<status status="FAIL" starttime="20220801 14:18:04.878" endtime="20220801 14:18:19.403"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>history.back()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="NOT RUN" starttime="20220801 14:18:19.404" endtime="20220801 14:18:19.404"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220801 14:18:19.404" endtime="20220801 14:18:19.404"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${index} == 4</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220801 14:18:19.404" endtime="20220801 14:18:19.404"/>
+</kw>
+<status status="FAIL" starttime="20220801 14:18:04.861" endtime="20220801 14:18:19.404"/>
+</iter>
+<status status="FAIL" starttime="20220801 14:15:40.189" endtime="20220801 14:18:19.404"/>
+</for>
 <kw name="End Web Test" library="common" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220713 15:00:02.186" endtime="20220713 15:00:03.361"/>
+<status status="PASS" starttime="20220801 14:18:19.405" endtime="20220801 14:18:20.829"/>
 </kw>
-<status status="PASS" starttime="20220713 15:00:02.186" endtime="20220713 15:00:03.361"/>
+<status status="PASS" starttime="20220801 14:18:19.405" endtime="20220801 14:18:20.829"/>
 </kw>
-<status status="PASS" starttime="20220713 14:59:15.835" endtime="20220713 15:00:03.361"/>
+<status status="FAIL" starttime="20220801 14:15:04.751" endtime="20220801 14:18:20.829">WebDriverException: Message: unknown error: cannot determine loading status
+from unknown error: unexpected command response
+  (Session info: chrome=103.0.5060.134)
+Stacktrace:
+0   chromedriver                        0x0000000102f49d14 chromedriver + 3792148
+1   chromedriver                        0x0000000102ee0828 chromedriver + 3360808
+2   chromedriver                        0x0000000102be10b8 chromedriver + 217272
+3   chromedriver                        0x0000000102bd0124 chromedriver + 147748
+4   chromedriver                        0x0000000102bcf8f4 chromedriver + 145652
+5   chromedriver                        0x0000000102bcef50 chromedriver + 143184
+6   chromedriver                        0x0000000102bce058 chromedriver + 139352
+7   chromedriver                        0x0000000102bce4f8 chromedriver + 140536
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000102c06318 chromedriver + 369432
+14  chromedriver                        0x0000000102f1f1e8 chromedriver + 3617256
+15  chromedriver                        0x0000000102f23678 chromedriver + 3634808
+16  chromedriver                        0x0000000102f27c6c chromedriver + 3652716
+17  chromedriver                        0x0000000102f24110 chromedriver + 3637520
+18  chromedriver                        0x0000000102f027ac chromedriver + 3499948
+19  chromedriver                        0x0000000102f3bbf0 chromedriver + 3734512
+20  chromedriver                        0x0000000102f3bd54 chromedriver + 3734868
+21  chromedriver                        0x0000000102f50558 chromedriver + 3818840
+22  libsystem_pthread.dylib             0x000000019730426c _pthread_start + 148
+23  libsystem_pthread.dylib             0x00000001972ff08c thread_start + 8</status>
 </test>
-<status status="PASS" starttime="20220713 14:59:15.717" endtime="20220713 15:00:03.362"/>
+<status status="FAIL" starttime="20220801 14:15:04.633" endtime="20220801 14:18:20.833"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="If Training">If Training</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="If Training">If Training</stat>
 </suite>
 </statistics>
 <errors>

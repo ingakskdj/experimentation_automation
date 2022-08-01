@@ -51,7 +51,7 @@ Detect type of stack
 
 #Test suite for all key metrics
 #Goal 2
-New Stack - User signs in and clicks Share Tools
+New Stack - User signs in and clicks Share via Facebook
     Authorize for New Stack
     Locate and Click ST New Stack
     set test message    "Expect Share - 2 clicks"
