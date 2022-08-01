@@ -31,7 +31,7 @@ Click MPO Old Stack
 
 Click MPO New Stack Loop
 #TODO there is a constant exception in firefox - MoveTargetOutOfBoundsException
-    ${links} =    get element count  css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(n)
+    ${links} =    get element count  css=ul[class^="css-ctilq6-List"] > li:nth-child(n)
         FOR   ${index}  IN RANGE  ${links}
         wait until page contains element    xpath=/html/body/div[2]/div/article/aside/div[3]/ul/li[${index}+1]
         ${new_link} =  Get WebElement  xpath=/html/body/div[2]/div/article/aside/div[3]/ul/li[${index}+1]

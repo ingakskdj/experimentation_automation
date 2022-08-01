@@ -4,8 +4,8 @@ Library  SeleniumLibrary
 *** Keywords ***
 Authorize for New Stack
     #Click login link
-    wait until element is visible    css:div[class^="UserLogin__LoginOptionWrapper"]
-    click element   css:div[class^="UserLogin__LoginOptionWrapper"]
+    wait until element is visible    css:div[class^="css-1x49ert-LoginOptionWrapper"]
+    click element   css:div[class^="css-1x49ert-LoginOptionWrapper"]
     #Send username
     wait until element is visible    css:input#username
     input text    css=input#username  ${USER_CREDENTIALS}[0]

@@ -19,8 +19,8 @@ Locate, play, subscribe and click audio control Podcast Old Stack
     Click Audio Control PC
 
 Locate Type 1 PC
-    wait until page contains element    css:div[data-type='media']
-    scroll element into view    css:div[data-type='media']
+    wait until page contains element    css:div[id^='audio']
+    scroll element into view    css:div[id^='audio']
     sleep    5
 
 Locate Type 2 PC

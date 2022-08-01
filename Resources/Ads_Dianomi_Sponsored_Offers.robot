@@ -9,3 +9,9 @@ Locate Dianomi Ads
     Execute JavaScript    window.scrollTo(0,400)
 #TODO change Xpath
     wait until element is enabled    xpath:/html/body/div[1]/div[4]/div/a/img
+
+ #    wait until element is enabled    css=div[data-skip-label="What to Read Next"]
+ #    scroll element into view    css=div[data-skip-label="What to Read Next"]
+ #    wait until element is enabled    id=dianomi-module
+ #    scroll element into view    id=dianomi-module
+ #    wait until element is enabled  css=div[class="line2"]

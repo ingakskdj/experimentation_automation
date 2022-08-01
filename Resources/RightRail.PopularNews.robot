@@ -35,9 +35,9 @@ Click MPN Old Stack
 Click MPN New Stack Loop
 #works with Chrome
 #TODO there is a constant exception in firefox - MoveTargetOutOfBoundsException
-    ${links} =    get element count  css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(n)
+    ${links} =    get element count  css=ul[class^="css-ctilq6-List"] > li:nth-child(n)
         FOR   ${index}  IN RANGE  ${links}
-        ${new_link} =  Get WebElement  xpath=/html/body/div[2]/div/article/aside/div[2]/ul/li[${index}+1]
+        ${new_link} =  Get WebElement  xpath=//div/main//ul/li[${index}+1]
         Wait Until Page Contains Element  ${new_link}
         Mouse Over  ${new_link}
         Click Link  ${new_link}
@@ -50,8 +50,8 @@ Click MPN New Stack
 #works with Safari
     wait until page contains element    css:div[aria-label='Most Popular News']
     #link1
-    wait until page contains element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(1)
-    click element    css=ul[class^="MostPopular__List-sc-pxt6ut-1"] > li:nth-child(1)
+    wait until page contains element    css=ul[class^="css-ctilq6-List"] > li:nth-child(1)
+    click element    css=ul[class^="css-ctilq6-List"] > li:nth-child(1)
     Execute Javascript  history.back()
 
 #    wait until page contains element    css:div[aria-label='Most Popular News']

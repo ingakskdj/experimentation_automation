@@ -28,9 +28,8 @@ Click RRRV Old Stack
     #Execute Javascript  history.back()
 Click RRRV New Stack
     #link1
-    wait until page contains element    css=ul[class^="MostPopularLazyLoad__List-sc-8zlmiv-1"] > li:nth-child(1)
-    click element    css=ul[class^="MostPopularLazyLoad__List-sc-8zlmiv-1"] > li:nth-child(1)
-    Execute Javascript  history.back()
+    wait until page contains element    css=a.css-122j7dq-Link.ennm3ub7
+    click element    css=a.css-122j7dq-Link.ennm3ub7
 
 #    sleep    5
 #    #link3
